@@ -1,6 +1,7 @@
 # coding: utf-8
 import argparse
 import os.path
+import os
 import numpy as np
 import scipy as sp
 import pandas as pd
@@ -9,7 +10,9 @@ from hail.linalg import BlockMatrix
 from hail.utils import new_temp_file
 
 print("hi")
-hl.init(default_reference='GRCh38',gcs_requester_pays_configuration=('kelly-project-slalom'))
+project_name = os.environ.get("SLALOM_PROJECTNAME")
+print(project_name)
+hl.init(default_reference='GRCh38',gcs_requester_pays_configuration=(project_name))
 
 gnomad_latest_versions = {"GRCh37": "2.1.1", "GRCh38": "3.1.2"}
 gnomad_pops = {"GRCh37": ["afr", "amr", "eas", "fin", "nfe"], "GRCh38": ["afr", "amr", "eas", "fin", "nfe", "sas"]}
