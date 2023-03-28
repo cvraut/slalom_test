@@ -1,0 +1,14 @@
+~/miniconda3/envs/slalom/bin/python slalom.py \
+                                    --snp example.snp \
+                                    --out chin.example.slalom.txt \
+                                    --out-summary chin.example.summary.txt \
+                                    --annotate-consequence \
+                                    --annotate-gnomad-freq \
+                                    --export-r \
+                                    --lead-variant-choice "prob" \
+                                    --weighted-average-r afr=n_afr amr=n_amr eas=n_eas fin=n_fin nfe=n_nfe \
+                                    --dentist-s \
+                                    --abf \
+                                    --summary \
+                                    --case-control \
+                                    --reference-genome GRCh38
